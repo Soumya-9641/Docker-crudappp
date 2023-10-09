@@ -1,0 +1,22 @@
+build-dev:
+	cd client && ${MAKE} build-dev
+	cd server && ${MAKE} build
+
+run-dev:
+	docker-compose up
+
+###make production
+build-local:
+	cd client && ${MAKE} build-production
+	cd server && ${MAKE} build
+
+run-local:
+	docker-compose up
+
+
+build-production:
+	cd client && ${MAKE} build-production
+	cd server && ${MAKE} build
+
+run-local:
+	ENV=production docker-ccompose up
